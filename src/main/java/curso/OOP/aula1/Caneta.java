@@ -1,11 +1,12 @@
-package curso_OOP;
+package curso.OOP.aula1;
 
 public class Caneta {
+
     public String modelo;
     public String cor;
     public float ponta;
-    public int carga;
-    public boolean tampada;
+    protected int carga;
+    protected boolean tampada;
 
     public void status() {
         System.out.println("Modelo: " + this.modelo);
@@ -23,11 +24,11 @@ public class Caneta {
         }
     }
 
-    public void tampar() {
+    protected void tampar() {
         this.tampada = true;
     }
 
-    public void destampar() {
+    protected void destampar() {
         this.tampada = false;
     }
 }
