@@ -6,8 +6,8 @@ public class Aula5 {
         cb1.abrirConta();
         cb1.setDono("Marya Eduarda");
         cb1.numConta = 361425;
-        cb1.setTipo("cc");
-        cb1.sacar(100.0f);
+        cb1.getTipo();
+        cb1.sacar(25.0f);
         cb1.status();
 
 

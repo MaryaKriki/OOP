@@ -1,8 +1,8 @@
 package curso.OOP.aula5;
 
 public class ContaBanco {
-
     public int numConta;
+
     protected String tipo = "";
     private String dono;
     private float saldo;
@@ -11,8 +11,13 @@ public class ContaBanco {
     public float mensalidade;
     private float saque;
 
+    public ContaBanco(boolean contaAberta, float saldo) {
+        this.contaAberta = false;
+        this.saldo = 0.0f;
+    }
+
     public String getTipo() {
-        return tipo = "";
+        return tipo = "cc";
     }
 
     public void setTipo(String tipo) {
@@ -35,7 +40,8 @@ public class ContaBanco {
         this.dono = dono;
     }
 
-    public void getSaldo() {
+    public float getSaldo() {
+        return saldo = 0.0f;
     }
 
     public void setSaldo(float saldo) {
@@ -50,19 +56,18 @@ public class ContaBanco {
         this.contaAberta = contaAberta;
     }
 
-    public ContaBanco(boolean contaAberta, float saldo) {
-        this.contaAberta = false;
-        this.saldo = 0.0f;
+    public void status(){
+        System.out.println("SOBRE A CONTA: ");
+        System.out.println("Nome do(a) dono(a): " + this.dono);
+        System.out.println("Número da conta: " + this.numConta);
+        System.out.println("Tipo: " + this.tipo);
+        System.out.println("Saldo: " + this.saldo);
+        System.out.println("Conta está aberta? " + this.contaAberta);
     }
 
     public void abrirConta(){
         this.contaAberta = true;
-
-        if (tipo.equals("cp")) {
-            this.saldo = 150.0f;
-        } else if (tipo.equals("cc")){
-            this.saldo = 50.0f;
-        }
+        this.saldo = 50.0f;
 
     }
 
@@ -96,14 +101,5 @@ public class ContaBanco {
             mensalidade = 12.90f;
         }
        saldo -= mensalidade;
-    }
-
-    public void status(){
-        System.out.println("SOBRE A CONTA: ");
-        System.out.println("Nome do(a) dono(a): " + this.dono);
-        System.out.println("Número da conta: " + this.numConta);
-        System.out.println("Tipo: " + this.tipo);
-        System.out.println("Saldo: " + this.saldo);
-        System.out.println("Conta está aberta? " + this.contaAberta);
     }
 }
