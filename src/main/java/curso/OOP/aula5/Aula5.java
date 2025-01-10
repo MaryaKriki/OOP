@@ -13,7 +13,10 @@ public class Aula5 {
         ContaBancoResp cb2 = new ContaBancoResp();
         cb2.abrirConta();
         cb2.setDono("Marya Eduarda");
-        cb2.setTipo("Cp");
+        cb2.setTipo("CP");
+        cb2.depositar(150);
+        cb2.pagarMensal();
+        cb2.estadoAtual();
 
 
     }

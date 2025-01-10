@@ -18,16 +18,38 @@ public class ContaBancoResp {
         }
     }
     public void fecharConta(){
+        if (this.getSaldo() > 0){
+            System.out.println("Não foi possível fechar a conta devido ao valor do seu saldo!");
+        } else if (this.getSaldo() < 0){
+            System.out.println("Não é possível fechar a conta devido ao débito pendente!");
+        } else {
+            this.setStatus(true);
+        }
 
     }
-    public void depositar(){
+    public void depositar(float v){
+        if (this.getStatus()){
+            this.saldo = this.saldo + v;
+        }
 
     }
-    public void sacar(){
+    public void sacar(float v){
+        if (this.getSaldo() > v){
+            this.saldo = this.saldo - v;
+        } else if (getSaldo() < v){
+            System.out.println("Não foi possível sacar devido ao valor do seu saldo");
+        }
 
     }
     public void pagarMensal(){
+        int v = 0;
+        if (getTipo() == "CP"){
+            v = 12;
+        }else if (getTipo() == "CC"){
+            v = 20;
+        } else if (getSaldo() < v){
 
+        }
     }
     // metodos especiais
     public ContaBancoResp(){
@@ -75,8 +97,8 @@ public class ContaBancoResp {
         this.status = st;
     }
 
-    public void status(){
-        System.out.println("SOBRE A CONTA: ");
+    public void estadoAtual(){
+        System.out.println("----------SOBRE A CONTA------------");
         System.out.println("Nome do(a) dono(a): " + this.dono);
         System.out.println("Número da conta: " + this.numConta);
         System.out.println("Tipo: " + this.tipo);
