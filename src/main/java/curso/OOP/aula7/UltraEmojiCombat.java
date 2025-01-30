@@ -1,5 +1,7 @@
 package curso.OOP.aula7;
 
+import java.util.Random;
+
 public class UltraEmojiCombat {
     public static void main(String[] args) {
 
@@ -20,5 +22,11 @@ public class UltraEmojiCombat {
 
         l[4].apresentar();
         l[4].status();
+
+        Luta lut1 = new Luta();
+        lut1.marcarLuta(l[0], l[1]);
+        lut1.lutar();
+        l[0].status();
+        l[1].status();
     }
 }
