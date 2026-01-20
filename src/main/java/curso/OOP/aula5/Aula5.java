@@ -6,8 +6,9 @@ public class Aula5 {
         cb1.abrirConta(cb1.tipo);
         cb1.setDono("Marya Eduarda");
         cb1.numConta = 361425;
-        cb1.getTipo();
-        cb1.sacar(25.0f);
+        cb1.setTipo("cc");
+        cb1.depositar(25.0f);
+        cb1.pagarMensal();
         cb1.status();
 
         ContaBancoResp cb2 = new ContaBancoResp();

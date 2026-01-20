@@ -18,6 +18,5 @@ public class Aula1 {
         c2.destampar();
         c2.status();
         c2.rabiscar();
-
     }
 }

@@ -2,13 +2,15 @@ package curso.OOP.aula5;
 
 public class ContaBanco {
     public int numConta;
-    protected String tipo = "";
-    protected String tipo2 = "";
+    protected String tipo;
     private String dono;
+    public float mensalidade;
     private float saldo;
     private boolean contaAberta;
 
-    private float saque;
+    //Métodos Especiais
+
+
     public ContaBanco() {
         this.contaAberta = false;
         this.saldo = 0.0f;
@@ -29,13 +31,20 @@ public class ContaBanco {
     public void setNumConta(int n) {
         this.numConta = n;
     }
-
     public String getDono() {
         return dono = dono;
     }
 
     public void setDono(String d) {
         this.dono = d;
+    }
+
+    public float getMensalidade() {
+        return mensalidade;
+    }
+
+    public void setMensalidade(float mensalidade) {
+        this.mensalidade = mensalidade;
     }
 
     public float getSaldo() {
@@ -46,47 +55,48 @@ public class ContaBanco {
         this.saldo = s;
     }
 
-    public boolean isContaAberta() {
+    public boolean getContaAberta() {
         return contaAberta;
     }
 
     public void setContaAberta(boolean cA) {
         this.contaAberta = cA;
     }
+    //Métodos
+
 
     public void status(){
         System.out.println("SOBRE A CONTA: ");
-        System.out.println("Nome do(a) dono(a): " + this.dono);
-        System.out.println("Número da conta: " + this.numConta);
-        System.out.println("Tipo: " + this.tipo);
-        System.out.println("Saldo: " + this.saldo);
-        System.out.println("Conta está aberta? " + this.contaAberta);
+        System.out.println("Nome do(a) dono(a): " + getDono());
+        System.out.println("Número da conta: " + getNumConta());
+        System.out.println("Tipo: " + getTipo());
+        System.out.println("Saldo: " + getSaldo());
+        System.out.println("Conta está aberta? " + getContaAberta());
     }
 
-    public void abrirConta(String t){
-        setTipo(t);
+    public void abrirConta(String tipo){
+        setTipo(tipo);
         setContaAberta(true);
-        if (t == "cc"){
-            saldo = 50;
-        } else if (t == "cp"){
-            saldo = 150;
+        if (tipo == "cc"){
+            setSaldo(50.00f);
+        } else if (tipo == "cp"){
+            setSaldo(150.00f);
         }
     }
 
     public void fecharConta(){
-
         if (saldo > 0.0){
             System.out.println("Não é possível fechar a conta com saldo positivo!!!");
         } else if (saldo < 0.0){
             System.out.println("Não é possível fechar a conta com saldo negativo!!!");
-        } else{
+        } else {
             contaAberta = false;
         }
     }
 
     public  void depositar(float v){
-        if (contaAberta == true){
-            saldo = saldo + v;
+        if (getContaAberta()){
+            setSaldo(saldo + v);
         } else {
             System.out.println("Abra sua conta para depositar!");
         }
@@ -96,18 +106,16 @@ public class ContaBanco {
         if (saldo < v){
             System.out.println("Não foi possível sacar devido ao valor do seu saldo!!!");
         } else if (saldo > v){
-            saldo = saque - v;
+            setSaldo(saldo + v);
         }
     }
 
-    public float mensalidade;
-
     public void pagarMensal(){
         if (tipo.equals("cp")){
-            mensalidade = 20.90f;
+            setMensalidade(20.90f);
         } else if (tipo.equals("cc")){
-            mensalidade = 12.90f;
+            setMensalidade(12.90f);
         }
-       saldo = saldo - mensalidade;
+        setSaldo(saldo - mensalidade);
     }
 }
