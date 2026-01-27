@@ -2,19 +2,20 @@ package curso.OOP.aula9;
 
 public class Livro implements Publicacao {
     private String titulo;
-    private Pessoa autor;
+    private String autor;
     private int totalPag;
     private int pagAtual;
     private boolean aberto;
-    private Pessoa leitor;
+    private String leitor;
 
     // Métodos especiais
 
 
-    public Livro(String t, Pessoa a, boolean abe) {
+    public Livro(String t, String a, String l) {
         this.titulo = t;
         this.autor = a;
-        this.aberto = abe;
+        this.leitor = l;
+        this.aberto = false;
     }
 
     public String getTitulo() {
@@ -25,11 +26,11 @@ public class Livro implements Publicacao {
         this.titulo = titulo;
     }
 
-    public Pessoa getAutor() {
+    public String getAutor() {
         return autor;
     }
 
-    public void setAutor(Pessoa autor) {
+    public void setAutor(String autor) {
         this.autor = autor;
     }
 
@@ -57,11 +58,11 @@ public class Livro implements Publicacao {
         this.aberto = aberto;
     }
 
-    public Pessoa getLeitor() {
+    public String getLeitor() {
         return leitor;
     }
 
-    public void setLeitor(Pessoa leitor) {
+    public void setLeitor(String leitor) {
         this.leitor = leitor;
     }
 
