@@ -15,15 +15,33 @@ public class Aula11 {
         a1.setIdade(17);
         a1.setSexo("Female");
         a1.pagarMensalidade();
-        
+
         Bolsista b1 = new Bolsista();
         b1.setNome("Cleudette");
+        b1.pagarMensalidade();
         b1.setIdade(16);
         b1.setMat(963852);
         b1.setCurso("Medicina");
         b1.setBolsa(28.7f);
         b1.setSexo("Female");
-        b1.pagarMensalidade();
+
+        Professor p1 = new Professor();
+        p1.setNome("Jubileu");
+        p1.setSexo("Male");
+        p1.setIdade(56);
+        p1.setSalario(1528.7f);
+        p1.receberAumento();
+        p1.setEspecialidade("Filosofia");
+
+        Tecnico t1 = new Tecnico();
+        t1.setNome("Neudane");
+        t1.setIdade(19);
+        t1.setMat(966252);
+        t1.setProfissionalidade("Logística");
+        t1.setSexo("Female");
+        t1.pagarMensalidade();
+        t1.praticando();
+
     }
 
 }
