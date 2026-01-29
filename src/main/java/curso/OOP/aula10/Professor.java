@@ -5,14 +5,6 @@ public class Professor extends Pessoa{
     private String especialidade;
     private double salario;
     //Métodos
-    public boolean apresentar(){
-        System.out.println("Nome: " + this.getNome());
-        System.out.println("Idade: " + this.getIdade());
-        System.out.println("Sexo: " + this.getSexo());
-        System.out.println("Especialidade: " + this.getEspecialidade());
-        System.out.println("Salário atual: " + this.getSalario());
-        return false;
-    }
     public void receberAumento(double aumento){
         setSalario(salario += aumento);
     }
