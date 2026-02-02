@@ -1,4 +1,4 @@
 package curso.OOP.aula12;
 
-public class Arara {
+public class Arara extends Ave{
 }

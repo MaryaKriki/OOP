@@ -1,4 +1,5 @@
 package curso.OOP.aula12;
 
-public class Goldfish {
+public class Goldfish extends Peixe{
+
 }

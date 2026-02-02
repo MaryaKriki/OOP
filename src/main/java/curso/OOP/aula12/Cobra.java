@@ -1,4 +1,4 @@
 package curso.OOP.aula12;
 
-public class Cobra {
+public class Cobra extends Reptil{
 }
